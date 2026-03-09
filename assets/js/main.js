@@ -83,8 +83,8 @@
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      once: false,
+      mirror: true
     });
   }
   window.addEventListener('load', aosInit);
@@ -115,16 +115,27 @@
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
+    let progress = item.querySelectorAll('.progress .progress-bar');
+    
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate the progress bars when scrolling into view
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+        } else {
+          // Reset the progress bars when scrolling out of view
+          progress.forEach(el => {
+            el.style.width = '0%';
+          });
+        }
+      });
+    }, {
+      threshold: 0.2 // Triggers when 20% of the element is visible
     });
+
+    observer.observe(item);
   });
 
   /**
