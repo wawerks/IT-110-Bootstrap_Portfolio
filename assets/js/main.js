@@ -9,6 +9,17 @@
 (function() {
   "use strict";
 
+  function portfolioScrollY() {
+    var lenis = window.portfolioLenis;
+    if (lenis && typeof lenis.scroll === "number") {
+      return lenis.scroll;
+    }
+    if (lenis && typeof lenis.actualScroll === "number") {
+      return lenis.actualScroll;
+    }
+    return window.scrollY || document.documentElement.scrollTop || 0;
+  }
+
   /**
    * Header toggle
    */
@@ -62,7 +73,7 @@
 
   function toggleScrollTop() {
     if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      portfolioScrollY() > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
   scrollTop.addEventListener('click', (e) => {
@@ -150,19 +161,52 @@
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
-        sortBy: sort
+        sortBy: sort,
+        transitionDuration: '0.55s',
+        hiddenStyle: { opacity: 0 },
+        visibleStyle: { opacity: 1 }
+      });
+      initIsotope.on('layoutComplete', function() {
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
       });
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
+        var filterBtn = this;
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof ScrollTrigger !== 'undefined') {
-          ScrollTrigger.refresh();
+        filterBtn.classList.add('filter-active');
+        var isoGrid = isotopeItem.querySelector('.isotope-container');
+        var nextFilter = filterBtn.getAttribute('data-filter');
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(isoGrid);
+          gsap.to(isoGrid, {
+            opacity: 0.78,
+            y: 10,
+            duration: 0.22,
+            ease: 'power2.in',
+            overwrite: 'auto',
+            onComplete: function() {
+              initIsotope.arrange({ filter: nextFilter });
+              gsap.to(isoGrid, {
+                opacity: 1,
+                y: 0,
+                duration: 0.52,
+                ease: 'power3.out',
+                overwrite: 'auto',
+              });
+              if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+              }
+            },
+          });
+        } else {
+          initIsotope.arrange({ filter: nextFilter });
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
         }
       }, false);
     });
@@ -224,7 +268,7 @@
       if (!navmenulink.hash) return;
       let section = document.querySelector(navmenulink.hash);
       if (!section) return;
-      let position = window.scrollY + 200;
+      let position = portfolioScrollY() + 200;
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
         navmenulink.classList.add('active');
