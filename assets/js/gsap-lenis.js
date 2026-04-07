@@ -184,7 +184,7 @@
   });
 
   /* ---- Tech stack NET layer (parallax on canvas, content stays sharp) ---- */
-  gsap.to('#techstack-vanta canvas', {
+  gsap.to('#techstack-vanta-effect canvas', {
     scrollTrigger: {
       trigger: '.about-techstack-band',
       start: 'top bottom',
@@ -216,7 +216,7 @@
   /* ---- Tech stack copy + icon rows ---- */
   var techContent = document.querySelector('.techstack-content');
   if (techContent) {
-    var techParts = techContent.querySelectorAll('h3, p, h5, .d-flex');
+    var techParts = techContent.querySelectorAll('h3, p, h5, .tech-icon-row');
     gsap.from(techParts, {
       scrollTrigger: {
         trigger: '#techstack-vanta',
