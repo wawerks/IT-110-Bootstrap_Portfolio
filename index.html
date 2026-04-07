@@ -20,12 +20,12 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -74,9 +74,9 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/cover.jpg" alt="" data-aos="fade-in" class="">
+      <img src="assets/img/cover.jpg" alt="" class="">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <h2>Rhowin Jhon Lumales</h2>
         <p>I'm a <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Web Developer, Freelancer, Software Developer, Musician">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
@@ -89,7 +89,7 @@
           <!-- End Modal -->
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>About</h2>
         <p>I am Highly experienced, and I can satisfy any of my clients with my work surely. My skills and services are:</p>
         <div class="row">
@@ -112,7 +112,7 @@
       </div> 
       <!-- End Section Title  -->
 
-       <div class="container" data-aos="fade-up" data-aos-delay="100">
+       <div class="container">
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
@@ -288,12 +288,12 @@
     <section id="skills" class="skills section light-background">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Skills</h2>
         <p>My Skills</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="row skills-content skills-animation">
 
@@ -371,7 +371,7 @@
     <section id="resume" class="resume section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Resume</h2>
         <p>To secure a challenging role in data analysis and software 
           development where I can leverage my IT background to contribute innovative solutions.</p>
@@ -381,7 +381,7 @@
 
         <div class="row">
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <h3 class="resume-title">Sumary</h3>
 
             <div class="resume-item pb-0">
@@ -419,7 +419,7 @@
 
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
               <h4>Social Media Manager</h4>
@@ -456,7 +456,7 @@
     <section id="portfolio" class="portfolio section light-background">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Portfolio</h2>
         <p>These certifications reflect my dedication to expanding my knowledge in technology, programming, 
           and digital systems while continuously improving my professional and technical skills.</p>
@@ -466,7 +466,7 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <ul class="portfolio-filters isotope-filters">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-cyber">Cybersecurity</li>
             <li data-filter=".filter-pm">Project Management</li>
@@ -474,7 +474,7 @@
             <li data-filter=".filter-app">Other Certs</li>
           </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4 isotope-container">
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/cert/css.png" class="img-fluid" alt="">
@@ -795,7 +795,6 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
@@ -804,8 +803,13 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-lenis.js"></script>
 
 </body>
 

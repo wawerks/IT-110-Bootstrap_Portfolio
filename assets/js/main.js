@@ -67,27 +67,18 @@
   }
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    if (window.portfolioLenis) {
+      window.portfolioLenis.scrollTo(0, { duration: 1.15 });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   });
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
-
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true
-    });
-  }
-  window.addEventListener('load', aosInit);
 
   /**
    * Init typed.js
@@ -170,8 +161,8 @@
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        if (typeof aosInit === 'function') {
-          aosInit();
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
         }
       }, false);
     });
@@ -205,11 +196,19 @@
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
           let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
+          let scrollMarginTop = parseInt(getComputedStyle(section).scrollMarginTop, 10) || 0;
+          if (window.portfolioLenis) {
+            window.portfolioLenis.scrollTo(section, {
+              offset: -(scrollMarginTop + 72),
+              duration: 0,
+              immediate: true
+            });
+          } else {
+            window.scrollTo({
+              top: section.offsetTop - scrollMarginTop,
+              behavior: 'smooth'
+            });
+          }
         }, 100);
       }
     }
