@@ -7,10 +7,10 @@ import * as THREE from 'three';
 /* Matte grey low-poly ball (reference look), not cream */
 const BALL_COLOR = 0xc8c8d0;
 const ICO_DETAIL = 1;
-const ICO_SCALE = 31;
+const ICO_SCALE = 28;
 /* Front offset & icon size in scene units (ball center at origin, camera toward +Z) */
 const ICON_SURFACE_Z = ICO_SCALE * 1.06;
-const ICON_RADIUS = 0.55 * ICO_SCALE;
+const ICON_RADIUS = 0.53 * ICO_SCALE;
 
 function createBallGroup(texture, renderer) {
   const group = new THREE.Group();

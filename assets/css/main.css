@@ -661,6 +661,11 @@ section,
   max-width: 100%;
 }
 
+/* Remove extra about-section bottom area that appears as a grey strip */
+.about.section {
+  padding-bottom: 0;
+}
+
 .about .techstack-vanta {
   position: relative;
   overflow: hidden;
@@ -670,6 +675,7 @@ section,
   max-width: 100%;
   min-height: 100%;
   align-self: stretch;
+  background: #23153c; /* match Vanta backgroundColor to avoid any banding */
 }
 
 .about .techstack-vanta-effect {
@@ -683,7 +689,7 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(35, 21, 60, 0.38);
+  background: transparent; /* remove grey overlay tint */
   z-index: 1;
 }
 
@@ -716,7 +722,7 @@ section,
 .about .techstack-vanta .tech-balls-row-wrap {
   position: relative;
   width: 100%;
-  min-height: 132px;
+  min-height: 120px;
 }
 
 .about .techstack-vanta .tech-balls-canvas {
@@ -735,11 +741,17 @@ section,
 }
 
 .about .techstack-vanta .tech-ball-slot {
-  width: 132px;
-  height: 132px;
+  width: 120px;
+  height: 120px;
   flex-shrink: 0;
   visibility: hidden;
 }
+
+/* Smooth transition from dark Vanta band into next light section */
+.about .about-techstack-band .row.border-top {
+  border-top: 0;
+}
+
 
 /*--------------------------------------------------------------
 # Stats Section
