@@ -247,6 +247,22 @@
     });
   }
 
+  var projectsGrid = document.querySelector('#projects .row');
+  if (projectsGrid) {
+    gsap.from(projectsGrid.querySelectorAll('[class*="col-"]'), {
+      scrollTrigger: {
+        trigger: projectsGrid,
+        start: 'top 88%',
+        toggleActions: 'play none none reverse',
+      },
+      y: 48,
+      opacity: 0,
+      duration: 0.65,
+      stagger: { each: 0.05, from: 'start' },
+      ease: 'power2.out',
+    });
+  }
+
   var isoContainer = document.querySelector('.isotope-container');
   if (isoContainer) {
     gsap.from(isoContainer.querySelectorAll('.portfolio-item'), {
