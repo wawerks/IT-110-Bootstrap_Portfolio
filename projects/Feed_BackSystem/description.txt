@@ -1,0 +1,1 @@
+A web app built for Agusan Del Norte Electric Cooperative for collecting customer or visitor feedback on configurable forms, storing it in a MySQL database, and letting staff review and analyze submissions. It is built for scenarios like a kiosk or public tablet (simple flow, optional name fields) plus back-office tools for admins and frontline personnel.

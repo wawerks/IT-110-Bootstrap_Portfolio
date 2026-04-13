@@ -247,19 +247,19 @@
     });
   }
 
-  var projectsGrid = document.querySelector('#projects .row');
+  var projectsGrid = document.querySelector('#projects .projects-showcase-grid');
   if (projectsGrid) {
-    gsap.from(projectsGrid.querySelectorAll('[class*="col-"]'), {
+    gsap.from(projectsGrid.querySelectorAll('.project-card-col'), {
       scrollTrigger: {
         trigger: projectsGrid,
         start: 'top 88%',
         toggleActions: 'play none none reverse',
       },
-      y: 48,
+      y: 56,
       opacity: 0,
-      duration: 0.65,
-      stagger: { each: 0.05, from: 'start' },
-      ease: 'power2.out',
+      duration: 0.72,
+      stagger: { each: 0.08, from: 'start' },
+      ease: 'power3.out',
     });
   }
 

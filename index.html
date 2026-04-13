@@ -376,53 +376,181 @@
     </section><!-- /Resume Section -->
 
     <!-- Projects Section -->
-    <section id="projects" class="portfolio section light-background">
+    <section id="projects" class="projects-showcase section light-background">
 
       <div class="container section-title">
         <h2>Projects</h2>
-        <p>Add your apps, sites, and code work here. Duplicate a card block below for each project.</p>
+        <p>Selected builds spanning internal tools, real-time systems, and a browser extension—each with screenshots and full context in the details view.</p>
       </div>
 
       <div class="container">
-        <div class="row gy-4">
+        <ul class="projects-showcase-filters list-unstyled d-flex flex-wrap justify-content-center gap-2 mb-4 pb-1" role="tablist" aria-label="Filter projects">
+          <li><button type="button" class="projects-filter-btn active" data-filter="*">All</button></li>
+          <li><button type="button" class="projects-filter-btn" data-filter="web">Web apps</button></li>
+          <li><button type="button" class="projects-filter-btn" data-filter="extension">Extensions</button></li>
+        </ul>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/cover.jpg" class="img-fluid" alt="Project preview" style="width: 100%; height: 220px; object-fit: cover;">
-              <div class="portfolio-info">
-                <h4 style="font-size: 1.1rem; line-height: 1.2;">Sample project title</h4>
-                <p>Short description — stack, role, or outcome.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" title="Live demo" class="details-link" style="left: calc(50% - 20px); right: auto;"><i class="bi bi-box-arrow-up-right"></i></a>
+        <div class="row gy-4 projects-showcase-grid">
+
+          <div class="col-lg-6 col-xl-4 project-card-col" data-category="web">
+            <article class="project-card h-100">
+              <div class="project-card__media">
+                <img src="projects/Sanitation/1.png" class="img-fluid" alt="Sanitation management system interface" width="800" height="500" loading="lazy">
+                <div class="project-card__overlay">
+                  <a href="projects/Sanitation/1.png" class="glightbox project-card__overlay-btn" data-gallery="gallery-sanitation" data-glightbox="type: image" title="Sanitation — cover"><i class="bi bi-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="visually-hidden">
+                  <a href="projects/Sanitation/Screenshot%202026-04-13%20093452.png" class="glightbox" data-gallery="gallery-sanitation" data-glightbox="type: image" title="Sanitation — screenshot 2"></a>
+                  <a href="projects/Sanitation/Screenshot%202026-04-13%20093534.png" class="glightbox" data-gallery="gallery-sanitation" data-glightbox="type: image" title="Sanitation — screenshot 3"></a>
+                </div>
               </div>
-            </div>
+              <div class="project-card__body">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Next.js</span>
+                  <span class="project-card__tag">TypeScript</span>
+                  <span class="project-card__tag">Prisma</span>
+                  <span class="project-card__tag">MySQL</span>
+                </div>
+                <h3 class="project-card__title">Sanitation management</h3>
+                <p class="project-card__excerpt">Web system for ANECOS with OCR ID scanning, REST API, and real-time sanitation records.</p>
+                <button type="button" class="btn project-card__details" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-detail-template="project-detail-sanitation" data-detail-title="Sanitation management system">Full description</button>
+              </div>
+            </article>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/123.png" class="img-fluid" alt="Project preview" style="width: 100%; height: 220px; object-fit: cover;">
-              <div class="portfolio-info">
-                <h4 style="font-size: 1.1rem; line-height: 1.2;">Another project</h4>
-                <p>GitHub, demo, or case study link in the icon.</p>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="Repository" class="details-link" style="left: calc(50% - 20px); right: auto;"><i class="bi bi-github"></i></a>
+          <div class="col-lg-6 col-xl-4 project-card-col" data-category="web">
+            <article class="project-card h-100">
+              <div class="project-card__media">
+                <img src="projects/Feed_BackSystem/1.png" class="img-fluid" alt="Customer feedback system" width="800" height="500" loading="lazy">
+                <div class="project-card__overlay">
+                  <a href="projects/Feed_BackSystem/1.png" class="glightbox project-card__overlay-btn" data-gallery="gallery-feedback" data-glightbox="type: image" title="Feedback — cover"><i class="bi bi-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="visually-hidden">
+                  <a href="projects/Feed_BackSystem/Screenshot%202026-04-13%20090622.png" class="glightbox" data-gallery="gallery-feedback" data-glightbox="type: image" title="Feedback — screenshot 2"></a>
+                  <a href="projects/Feed_BackSystem/Screenshot%202026-04-13%20091630.png" class="glightbox" data-gallery="gallery-feedback" data-glightbox="type: image" title="Feedback — screenshot 3"></a>
+                </div>
               </div>
-            </div>
+              <div class="project-card__body">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">MySQL</span>
+                  <span class="project-card__tag">Forms</span>
+                  <span class="project-card__tag">Kiosk-ready</span>
+                </div>
+                <h3 class="project-card__title">Customer feedback</h3>
+                <p class="project-card__excerpt">Configurable forms for visitors—collect, store, and review submissions with admin and frontline tooling.</p>
+                <button type="button" class="btn project-card__details" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-detail-template="project-detail-feedback" data-detail-title="Customer feedback system">Full description</button>
+              </div>
+            </article>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/cover.jpg" class="img-fluid" alt="Project preview" style="width: 100%; height: 220px; object-fit: cover;">
-              <div class="portfolio-info">
-                <h4 style="font-size: 1.1rem; line-height: 1.2;">Your next project</h4>
-                <p>Use images from assets/img/projects/ for screenshots.</p>
-                <a href="#" class="details-link" style="left: calc(50% - 20px); right: auto;" title="Details"><i class="bi bi-link-45deg"></i></a>
+          <div class="col-lg-6 col-xl-4 project-card-col" data-category="web">
+            <article class="project-card h-100">
+              <div class="project-card__media">
+                <img src="projects/Election/1.png" class="img-fluid" alt="Election monitoring dashboard" width="800" height="500" loading="lazy">
+                <div class="project-card__overlay">
+                  <a href="projects/Election/1.png" class="glightbox project-card__overlay-btn" data-gallery="gallery-election" data-glightbox="type: image" title="Election — cover"><i class="bi bi-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="visually-hidden">
+                  <a href="projects/Election/615981687_2488335198250420_5503653147546033636_n.jpg" class="glightbox" data-gallery="gallery-election" data-glightbox="type: image" title="Election — photo 1"></a>
+                  <a href="projects/Election/626366514_1618385839187877_541446032701487640_n.jpg" class="glightbox" data-gallery="gallery-election" data-glightbox="type: image" title="Election — photo 2"></a>
+                </div>
               </div>
-            </div>
+              <div class="project-card__body">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Next.js</span>
+                  <span class="project-card__tag">SSE</span>
+                  <span class="project-card__tag">Prisma</span>
+                </div>
+                <h3 class="project-card__title">Election monitor</h3>
+                <p class="project-card__excerpt">Live vote counts and admin-managed candidates for AECC with instant result updates.</p>
+                <button type="button" class="btn project-card__details" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-detail-template="project-detail-election" data-detail-title="Election monitoring system">Full description</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 project-card-col" data-category="extension">
+            <article class="project-card h-100">
+              <div class="project-card__media">
+                <img src="projects/AI%20Image%20Detector/1.png" class="img-fluid" alt="AI image detector extension" width="800" height="500" loading="lazy">
+                <div class="project-card__overlay">
+                  <a href="projects/AI%20Image%20Detector/1.png" class="glightbox project-card__overlay-btn" data-gallery="gallery-ai-detector" data-glightbox="type: image" title="AI detector — cover"><i class="bi bi-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="visually-hidden">
+                  <a href="projects/AI%20Image%20Detector/Screenshot%202026-04-13%20092606.png" class="glightbox" data-gallery="gallery-ai-detector" data-glightbox="type: image" title="AI detector — screenshot 2"></a>
+                  <a href="projects/AI%20Image%20Detector/Screenshot%202026-04-13%20092631.png" class="glightbox" data-gallery="gallery-ai-detector" data-glightbox="type: image" title="AI detector — screenshot 3"></a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Extension</span>
+                  <span class="project-card__tag">ML / API</span>
+                  <span class="project-card__tag">Facebook</span>
+                </div>
+                <h3 class="project-card__title">AI image detector</h3>
+                <p class="project-card__excerpt">Browser extension that flags AI-generated or deepfake images and lets users review flagged media.</p>
+                <button type="button" class="btn project-card__details" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-detail-template="project-detail-ai" data-detail-title="AI image detector extension">Full description</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 project-card-col" data-category="web">
+            <article class="project-card h-100">
+              <div class="project-card__media">
+                <img src="projects/church-management/1.png" class="img-fluid" alt="Church management system" width="800" height="500" loading="lazy">
+                <div class="project-card__overlay">
+                  <a href="projects/church-management/1.png" class="glightbox project-card__overlay-btn" data-gallery="gallery-church" data-glightbox="type: image" title="Church CMS — cover"><i class="bi bi-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="visually-hidden">
+                  <a href="projects/church-management/Screenshot%202026-04-13%20083400.png" class="glightbox" data-gallery="gallery-church" data-glightbox="type: image" title="Church CMS — screenshot 2"></a>
+                  <a href="projects/church-management/Screenshot%202026-04-13%20083950.png" class="glightbox" data-gallery="gallery-church" data-glightbox="type: image" title="Church CMS — screenshot 3"></a>
+                  <a href="projects/church-management/Screenshot%202026-04-13%20084045.png" class="glightbox" data-gallery="gallery-church" data-glightbox="type: image" title="Church CMS — screenshot 4"></a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Next.js</span>
+                  <span class="project-card__tag">Tailwind</span>
+                  <span class="project-card__tag">Finance</span>
+                </div>
+                <h3 class="project-card__title">Church management</h3>
+                <p class="project-card__excerpt">Members, events, attendance, and finances with exports, roles, void workflows, and audit logs.</p>
+                <button type="button" class="btn project-card__details" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-detail-template="project-detail-church" data-detail-title="Church management system">Full description</button>
+              </div>
+            </article>
           </div>
 
         </div>
       </div>
 
+      <template id="project-detail-sanitation">
+        <p>A web-based sanitation management system built for ANECOS to track, manage, and monitor consumer sanitation records. The system features ID scanning using OCR for automated data entry, along with a user-friendly frontend and RESTful API backend for efficient data handling, authentication, and real-time updates. Developed using Next.js, TypeScript, Prisma, and MySQL for a scalable and responsive solution.</p>
+      </template>
+      <template id="project-detail-feedback">
+        <p>A web app built for Agusan Del Norte Electric Cooperative for collecting customer or visitor feedback on configurable forms, storing it in a MySQL database, and letting staff review and analyze submissions. It is built for scenarios like a kiosk or public tablet (simple flow, optional name fields) plus back-office tools for admins and frontline personnel.</p>
+      </template>
+      <template id="project-detail-election">
+        <p>A real-time election monitoring system for AECC that displays live vote counts, manages candidates through an admin panel, and updates results instantly. Built using Next.js, MySQL, Prisma, and Server-Sent Events for high-performance and responsive user experience.</p>
+      </template>
+      <template id="project-detail-ai">
+        <p>An AI-powered browser extension that identifies and filters deepfake or AI-generated images on Facebook. The tool automatically analyzes images, hides detected content, and allows users to review flagged media using machine learning models and API-based detection.</p>
+      </template>
+      <template id="project-detail-church">
+        <p>This is a web app for running church operations in one place. Staff and leaders sign in, and the app tracks members and families, services and events, attendance, and money (tithes, offering, donations, expenses). Built-in financial reports export to Excel, PDF, or Word from live records, so summaries stay aligned with what is in the system. Admins, pastors, staff, and treasurers see different screens based on role. Money mistakes or reversals go through a void request flow (non-admins request, admins approve), and important actions can be recorded in action logs for accountability. It is built with Next.js, React, TypeScript, Tailwind CSS, Prisma, and MySQL.</p>
+      </template>
     </section><!-- /Projects Section -->
+
+    <!-- Project detail modal (shared) -->
+    <div class="modal fade project-detail-modal" id="projectDetailModal" tabindex="-1" aria-labelledby="projectDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title" id="projectDetailModalLabel">Project</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-2" id="projectDetailModalBody"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
@@ -818,6 +946,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/projects-showcase.js"></script>
   <script src="assets/js/gsap-lenis.js"></script>
 
   <script type="importmap">

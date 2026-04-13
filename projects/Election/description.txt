@@ -1,0 +1,1 @@
+A real-time election monitoring system for AECC that displays live vote counts, manages candidates through an admin panel, and updates results instantly. Built using Next.js, MySQL, Prisma, and Server-Sent Events for high-performance and responsive user experience

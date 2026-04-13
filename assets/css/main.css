@@ -1012,6 +1012,235 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Projects showcase (featured work)
+--------------------------------------------------------------*/
+.projects-showcase-filters {
+  gap: 0.5rem 0.65rem;
+}
+
+.projects-filter-btn {
+  font-family: var(--nav-font);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--heading-color), transparent 78%);
+  background: var(--surface-color);
+  color: var(--heading-color);
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.projects-filter-btn:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 35%);
+  color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.projects-filter-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 62%);
+}
+
+.project-card {
+  position: relative;
+  background: var(--surface-color);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--default-color), transparent 94%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.35s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 55%), transparent 42%, color-mix(in srgb, var(--accent-color), transparent 70%));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px color-mix(in srgb, var(--default-color), transparent 88%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 72%);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--heading-color), transparent 94%);
+}
+
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.05);
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(5, 13, 24, 0.55) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-card__overlay,
+.project-card:focus-within .project-card__overlay {
+  opacity: 1;
+}
+
+.project-card__overlay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background: var(--surface-color);
+  color: var(--heading-color) !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  transform: translateY(8px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, color 0.25s ease;
+}
+
+.project-card:hover .project-card__overlay-btn,
+.project-card:focus-within .project-card__overlay-btn {
+  transform: translateY(0);
+}
+
+.project-card__overlay-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color) !important;
+}
+
+.project-card__overlay-btn i {
+  font-size: 1.1rem;
+}
+
+.project-card__body {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.project-card__tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: color-mix(in srgb, var(--accent-color), var(--heading-color) 28%);
+}
+
+.project-card__title {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--heading-color);
+  letter-spacing: -0.02em;
+}
+
+.project-card__excerpt {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+  margin-bottom: 1rem;
+}
+
+.project-card__details {
+  font-family: var(--nav-font);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  background: transparent;
+  color: var(--accent-color);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card__details:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.project-card-col--hidden {
+  display: none !important;
+}
+
+.project-detail-modal .modal-content {
+  border-radius: 14px;
+}
+
+.project-detail-modal .modal-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.project-detail-modal .modal-body p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--default-color);
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__media img,
+  .project-card__overlay,
+  .project-card__overlay-btn,
+  .projects-filter-btn {
+    transition-duration: 0.01ms !important;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__media img {
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {

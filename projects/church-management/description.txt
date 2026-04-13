@@ -1,0 +1,5 @@
+Church Management System (short description)
+
+This is a web app for running church operations in one place. Staff and leaders sign in, and the app tracks members and families, services/events, attendance, and money (tithes/offering, donations, expenses). Built-in financial reports export to Excel, PDF, or Word from live records, so summaries stay aligned with what is in the system. Admins, pastors, staff, and treasurers see different screens based on role. Money mistakes or reversals go through a void request flow (non-admins request, admins approve), and important actions can be recorded in action logs for accountability. It is built with Next.js, React, TypeScript, Tailwind CSS, Prisma, and MySQL.
+
+

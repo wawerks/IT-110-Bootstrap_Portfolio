@@ -1,0 +1,1 @@
+An AI-powered browser extension that identifies and filters deepfake or AI-generated images on Facebook. The tool automatically analyzes images, hides detected content, and allows users to review flagged media using machine learning models and API-based detection.
