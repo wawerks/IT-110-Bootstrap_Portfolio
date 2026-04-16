@@ -895,6 +895,156 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.resume .resume-section-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.resume .resume-section-title .resume-title-text {
+  flex: 1 1 60%;
+  min-width: 260px;
+}
+
+.resume .resume-section-title .resume-title-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+@media (max-width: 575.98px) {
+  .resume .resume-section-title {
+    justify-content: flex-start;
+  }
+  .resume .resume-section-title .resume-title-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.resume .btn-resume-download,
+.resume .btn-resume-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  margin: 0;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  border: 2px solid var(--accent-color);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume .btn-resume-download {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-color), transparent 65%);
+}
+
+.resume .btn-resume-download:hover,
+.resume .btn-resume-download:focus {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--accent-color), #000 12%);
+  color: #fff;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+.resume .btn-resume-view {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.resume .btn-resume-view:hover,
+.resume .btn-resume-view:focus {
+  transform: translateY(-2px);
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-color), transparent 65%);
+}
+
+.resume .btn-resume-download i,
+.resume .btn-resume-view i {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.resume .certificate-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 6px;
+}
+
+.resume .certificate-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resume .certificate-list li:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  transform: translateX(2px);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.resume .certificate-list .certificate-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--heading-color);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.resume .certificate-list .certificate-link:hover,
+.resume .certificate-list .certificate-link:focus {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.resume .certificate-list .certificate-link i {
+  font-size: 18px;
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
+.resume .certificate-list .certificate-verify {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.resume .certificate-list .certificate-verify:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
